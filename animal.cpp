@@ -13,6 +13,9 @@ ostream& operator<<(ostream& os,const Animal& an){
     return os;
 }
 
+
+Animal::Animal(int num_animal,string nick):num_of_animal(num_animal),nickname(nick),starter_num(num_animal){}
+
 void Lemming::check_num(){
     if (get_num()>200){
         set_num(30);
