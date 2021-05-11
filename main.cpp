@@ -59,26 +59,20 @@ int main(){
                     break;
             }
         }
-<<<<<<< Updated upstream
-        for(int i=0; i< preys.size(); i++){
-            cout << preys[i]->get_nickname() << endl;            
-        }
-        for(int i=0; i< preys.size(); i++){
-            cout << predators[i]->get_nickname() << endl;            
-        }
-=======
         /*for(int i=0; i< preys.size(); i++){
             cout << preys[i]->get_nickname() << endl;            
         }
         for(int i=0; i< preys.size(); i++){
             cout << predators[i]->get_nickname() << endl;            
         }*/
-        
->>>>>>> Stashed changes
 
     }
     catch(Enor::Exception exp) {
         cerr << "Open error!";
         return 2;
+    }
+
+    for(;;){
+        //test
     }
 }
