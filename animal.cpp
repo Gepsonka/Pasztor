@@ -1,4 +1,4 @@
-#include "animal.h"
+#include "Animal.h"
 #include <iostream>
 
 using namespace std;
@@ -12,6 +12,12 @@ ostream& operator<<(ostream& os,const Animal& an){
     os<<an.nickname<<": "<<an.num_of_animal<<endl;
     return os;
 }
+
+Animal::Animal(string nick, int num_animal){
+    nickname = nick;
+    set_num(num_animal);
+}
+
 
 void Lemming::check_num(){
     if (get_num()>200){
