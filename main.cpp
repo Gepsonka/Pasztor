@@ -1,9 +1,5 @@
 #include "animal.h"
-<<<<<<< HEAD
 #include "Enor.h"
-=======
-#include "enor.h"
->>>>>>> 66a18e0deec8b4a3757e3ddb11ccac1d0537a93c
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
@@ -61,10 +57,6 @@ int main(){
                     break;                
                 default:
                     break;
-<<<<<<< HEAD
-=======
-
->>>>>>> 66a18e0deec8b4a3757e3ddb11ccac1d0537a93c
             }
         }
         for(int i=0; i< preys.size(); i++){
