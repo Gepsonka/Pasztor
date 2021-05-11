@@ -61,6 +61,7 @@ public:
 
 class Rabbit : public Prey {
 public:
+    using Prey::Prey;
     void getting_eaten(int predator_colony_num) override;
     void check_num() override;
     void raise_num() override;
@@ -69,6 +70,7 @@ public:
 
 class Hamster : public Prey {
 public:
+    using Prey::Prey;
     void getting_eaten(int predator_colony_num) override;
     void check_num() override;
     void raise_num() override;
@@ -78,6 +80,7 @@ public:
 
 class SnowOwl : public Predators {
 public:
+    using Predators::Predators;
     void hunt(Prey& colony) override;
     void breeding() override;
 };
@@ -85,6 +88,7 @@ public:
 
 class Wolf : public Predators {
 public:
+    using Predators::Predators;
     void hunt(Prey& colony) override;
     void breeding() override;
 };
@@ -92,6 +96,7 @@ public:
 
 class ArticFox : public Predators {
 public:
+    using Predators::Predators;
     void hunt(Prey& colony) override;
     void breeding() override;
 };
