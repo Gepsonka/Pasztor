@@ -1,5 +1,5 @@
-#include "Animal.h"
-#include "Enor.h"
+#include "animal.h"
+#include "enor.h"
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
@@ -19,7 +19,7 @@ bool emptyFile(const string &filename)
     }
 }
 
-int main(int argc,char *argv[]){
+int main(){
 
     vector<Prey*> preys;
     vector<Predators*> predators;
@@ -36,15 +36,35 @@ int main(int argc,char *argv[]){
         for(t.first(); !t.end(); t.next()){
             string nick = t.current().nickname;
             int num = t.current().num;
-            switch(t.current().type){
-                case 'h':
+            switch(t.current().type){                
+                case 'l':
+                    preys.push_back(new Lemming(nick,num));
                     break;
+                case 'n':
+                    preys.push_back(new Rabbit(nick,num));
+                    break;
+                case 'u':
+                    preys.push_back(new Hamster(nick,num));
+                    break;
+                case 'h':
+                    predators.push_back(new SnowOwl(nick,num));
+                    break;
+                case 's':
+                    predators.push_back(new ArticFox(nick,num));
+                    break;
+                case 'f':
+                    predators.push_back(new Wolf(nick,num));
+                    break;                
                 default:
+                    break;
 
             }
         }
         for(int i=0; i< preys.size(); i++){
-            cout << preys[i]->get_nickname() << endl;
+            cout << preys[i]->get_nickname() << endl;            
+        }
+        for(int i=0; i< preys.size(); i++){
+            cout << predators[i]->get_nickname() << endl;            
         }
 
     }
