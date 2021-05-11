@@ -1,44 +1,55 @@
-#include "animal.h"
+#include "Animal.h"
+#include "Enor.h"
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
 
+bool emptyFile(const string &filename)
+{
+    Enor t(filename);
+    t.first();
+    if(t.end()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 int main(int argc,char *argv[]){
 
-    ifstream pasztor_file;
-    pasztor_file.open(argv[1]);
-    cout<<argv[1]<<endl;
-    if (pasztor_file.is_open()){
-        cout<<"File opened successfully!"<<endl;
-        
+    vector<Prey*> preys;
+    vector<Predators*> predators;
+
+    string filename = "animals.txt";
+
+    try{
+        /*if(emptyFile(filename)) {
+            cerr << "Empty file\n";
+            return 1;
+        }*/
+        Enor t(filename);
+        t.readfirstline();
+        for(t.first(); !t.end(); t.next()){
+            string nick = t.current().nickname;
+            int num = t.current().num;
+            switch(t.current().type){
+                case 'h':
+                    break;
+                default:
+
+            }
+        }
+        for(int i=0; i< preys.size(); i++){
+            cout << preys[i]->get_nickname() << endl;
+        }
+
     }
-    else {
-        cout<<"error\n";
-        pasztor_file.close();
+    catch(Enor::Exception exp) {
+        cerr << "Open error!";
+        return 2;
     }
-
-
-    Lemming lemming;
-    Rabbit rabbit;
-    Hamster hamster;
-
-    SnowOwl snowowl;
-    Wolf wolf;
-    ArticFox articfox;
-
-
-
-    for (int i=0;i<100000;i++){
-
-
-    }
-
-
-
-    
-    
-
-} 
+}
