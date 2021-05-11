@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include <vector>
 
 using namespace std;
 
@@ -22,26 +21,24 @@ int main(int argc,char *argv[]){
     }
 
 
-    vector<Prey*> prey_colonies;
-    vector<Predators*> predator_colonies;
+    Lemming lemming;
+    Rabbit rabbit;
+    Hamster hamster;
 
-    Lemming lemming(23,"coco");
-    cout<<lemming<<endl;
+    SnowOwl snowowl;
+    Wolf wolf;
+    ArticFox articfox;
 
-    for(int i=1;;i++){
+
+
+    for (int i=0;i<100000;i++){
+
 
     }
+
 
 
     
-
-    for (auto n : prey_colonies){
-        delete n;
-    }
-
-    for(auto n : predator_colonies){
-        delete n;
-    }
     
 
 } 
