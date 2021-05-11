@@ -19,7 +19,7 @@ bool emptyFile(const string &filename)
     }
 }
 
-int main(int argc,char *argv[]){
+int main(){
 
     vector<Prey*> preys;
     vector<Predators*> predators;
@@ -40,7 +40,7 @@ int main(int argc,char *argv[]){
                 case 'h':
                     break;
                 default:
-
+                    break;
             }
         }
         for(int i=0; i< preys.size(); i++){
