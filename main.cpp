@@ -11,7 +11,7 @@ using namespace std;
 bool emptyFile(const string &filename)
 {
     Enor t(filename);
-    t.first();
+    t.readfirstline();
     if(t.end()) {
         return true;
     } else {
@@ -27,10 +27,10 @@ int main(){
     string filename = "animals.txt";
 
     try{
-        /*if(emptyFile(filename)) {
+        if(emptyFile(filename)) {
             cerr << "Empty file\n";
             return 1;
-        }*/
+        }
         Enor t(filename);
         t.readfirstline();
         for(t.first(); !t.end(); t.next()){
@@ -57,19 +57,23 @@ int main(){
                     break;                
                 default:
                     break;
-
             }
         }
-        for(int i=0; i< preys.size(); i++){
+        /*for(int i=0; i< preys.size(); i++){
             cout << preys[i]->get_nickname() << endl;            
         }
         for(int i=0; i< preys.size(); i++){
             cout << predators[i]->get_nickname() << endl;            
-        }
+        }*/
 
     }
     catch(Enor::Exception exp) {
         cerr << "Open error!";
         return 2;
     }
+
+    for(;;){
+
+    }
+
 }
