@@ -1,4 +1,4 @@
-#include "Animal.h"
+#include "animal.h"
 #include <iostream>
 
 using namespace std;

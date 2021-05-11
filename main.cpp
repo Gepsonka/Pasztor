@@ -1,4 +1,4 @@
-#include "Animal.h"
+#include "animal.h"
 #include "Enor.h"
 #include <iostream>
 #include <fstream>
