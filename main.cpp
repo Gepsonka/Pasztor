@@ -4,6 +4,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ bool emptyFile(const string &filename)
 }
 
 int main(){
+    srand( ( unsigned int )time( nullptr ) );
 
     vector<Prey*> preys;
     vector<Predators*> predators;
@@ -70,25 +72,14 @@ int main(){
     catch(Enor::Exception exp) {
         cerr << "Open error!";
         return 2;
+
     }
+
 
     for (int round=0;;round++){
 
-
-        bool end_simulation_condition=false;
-        for (auto x : preys){
-            if (x->get_starter_num()*4<=x->get_num()){
-                end_simulation_condition=true;
-                break;
-            }
-            if (x->get_num()<=0){
-                end_simulation_condition=true;
-                break;
-            }
-        }
-        if (end_simulation_condition){
-            break;
-        }
+        
+        
     }
 
 
