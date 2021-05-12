@@ -36,7 +36,7 @@ int main(){
         for(t.first(); !t.end(); t.next()){
             string nick = t.current().nickname;
             int num = t.current().num;
-            switch(t.current().type){                
+            switch(t.current().type){
                 case 'l':
                     preys.push_back(new Lemming(nick,num));
                     break;
@@ -54,17 +54,18 @@ int main(){
                     break;
                 case 'f':
                     predators.push_back(new Wolf(nick,num));
-                    break;                
+                    break;
                 default:
                     break;
             }
         }
-        /*for(int i=0; i< preys.size(); i++){
-            cout << preys[i]->get_nickname() << endl;            
-        }
+
         for(int i=0; i< preys.size(); i++){
-            cout << predators[i]->get_nickname() << endl;            
-        }*/
+            cout << preys[i]->get_nickname() << " " << preys[i]->get_num() << endl;
+        }
+        for(int i=0; i< predators.size(); i++){
+            cout << predators[i]->get_nickname() << " " << predators[i]->get_num() << endl;
+        }
 
     }
     catch(Enor::Exception exp) {
@@ -72,7 +73,32 @@ int main(){
         return 2;
     }
 
-    for(;;){
-        //test
+    int preys_start_sum = 0;
+    for(int i=0; i< preys.size(); i++){
+        preys_start_sum += preys[i]->get_starter_num();
     }
+    cout << preys_start_sum << endl;
+
+    for(int round=0;;round++){
+        int preys_curr_sum = 0;
+
+        //...
+
+
+        for(auto x : preys){
+            preys_curr_sum += x->get_num();
+        }
+        if(preys_start_sum*4 < preys_curr_sum || preys_curr_sum <= 0){
+            break;
+        }
+    }
+
+    for(auto x : preys){
+        delete x;
+    }
+    for(auto x : predators){
+        delete x;
+    }
+
+    return 0;
 }

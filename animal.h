@@ -10,6 +10,7 @@ class Animal {
 public:
     Animal(string nick, int num_animal);
     int get_num() const {return num_of_animal;}
+    int get_starter_num() const {return starter_num;}
     int set_num(int a){
         num_of_animal=a;
         return num_of_animal;
@@ -33,8 +34,6 @@ public:
     virtual void getting_eaten(int predator_colony_num)=0;
     virtual void check_num()=0;
     virtual void raise_num()=0;
-
-
 };
 
 class Predators : public Animal{
