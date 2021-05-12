@@ -13,10 +13,8 @@ ostream& operator<<(ostream& os,const Animal& an){
     return os;
 }
 
-Animal::Animal(string nick, int num_animal){
-    nickname = nick;
-    set_num(num_animal);
-}
+Animal::Animal(string nick, int num_animal):num_of_animal(num_animal),starter_num(num_animal),nickname(nick)
+{}
 
 
 void Lemming::check_num(){
@@ -71,11 +69,11 @@ void Hamster::raise_num(){
 }
 
 int Predators::check_not_enough_prey(int num_of_prey){
-    int original_num=num_of_animal;
+    int original=num_of_animal;
     if (num_of_prey<num_of_animal){
-        set_num(get_num()-int(get_num()/4));
+        set_num(get_num()-(int)(get_num()/4));
     }
-    return original_num;
+    return original;
 }
 
 void SnowOwl::hunt(Prey& colony){

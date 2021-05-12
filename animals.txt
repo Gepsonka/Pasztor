@@ -1,7 +1,7 @@
 4 2
-kicsik l 86
-picik l 90
-szaporak n 26
-szorgosak u 12
-ehesek f 12
-tollasak h 6
+kicsik l 0
+picik l 0
+szaporak n 0
+szorgosak u 0
+ehesek f 0
+tollasak h 0

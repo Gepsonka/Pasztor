@@ -14,6 +14,9 @@ public:
         num_of_animal=a;
         return num_of_animal;
     }
+    int get_starter_num() const {
+        return starter_num;
+    }
 
     string get_nickname(){return nickname;}
     friend istream& operator>>(istream& is,Animal& an);
