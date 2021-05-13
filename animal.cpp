@@ -1,4 +1,4 @@
-#include "animal.h"
+#include "Animal.h"
 #include <iostream>
 
 using namespace std;
@@ -15,6 +15,7 @@ ostream& operator<<(ostream& os,const Animal& an){
 
 Animal::Animal(string nick, int num_animal){
     nickname = nick;
+    starter_num = num_animal;
     set_num(num_animal);
 }
 
@@ -27,19 +28,29 @@ void Lemming::check_num(){
 
 
 void Lemming::getting_eaten(int predator_colony_num){
-    set_num(get_num()-(4*predator_colony_num));
-    check_num();
-
+    if( (get_num()-(4*predator_colony_num)) <= 0){
+        set_num(0);
+    }
+    else{
+        set_num(get_num()-(4*predator_colony_num));
+    }
 }
 
-void Lemming::raise_num(){
-    set_num(get_num()*2);
+void Lemming::raise_num(int round){
+    if(round % 2 == 0){
+        set_num(get_num()*2);
+    }
+    check_num();
 }
 
 
 void Rabbit::getting_eaten(int predator_colony_num){
-    set_num(get_num()-predator_colony_num*2);
-    check_num();
+    if( (get_num()-(predator_colony_num*2)) <= 0){
+        set_num(0);
+    }
+    else{
+       set_num(get_num()-predator_colony_num*2);
+    }
 }
 
 void Rabbit::check_num(){
@@ -49,15 +60,21 @@ void Rabbit::check_num(){
 }
 
 
-
-void Rabbit::raise_num(){
-    set_num(int(get_num()*1.5));
+void Rabbit::raise_num(int round){
+    if(round % 2 ==0){
+        set_num(int(get_num()*1.5));
+    }
+    check_num();
 }
 
 
 void Hamster::getting_eaten(int predator_colony_num){
-    set_num(get_num()-predator_colony_num*2);
-    check_num();
+    if( (get_num()-(predator_colony_num*2)) <= 0){
+        set_num(0);
+    }
+    else{
+        set_num(get_num()-predator_colony_num*2);
+    }
 }
 
 void Hamster::check_num(){
@@ -66,8 +83,11 @@ void Hamster::check_num(){
     }
 }
 
-void Hamster::raise_num(){
-    set_num(get_num()*2);
+void Hamster::raise_num(int round){
+    if(round % 4 ==0){
+        set_num(get_num()*2);
+    }
+    check_num();
 }
 
 int Predators::check_not_enough_prey(int num_of_prey){
@@ -94,7 +114,7 @@ void Wolf::hunt(Prey& colony){
 }
 
 void Wolf::breeding(){
-    set_num(get_num()+3*int(get_num()/4));
+    set_num(get_num()+2*int(get_num()/4));
 }
 
 
@@ -104,7 +124,7 @@ void ArticFox::hunt(Prey& colony){
 }
 
 void ArticFox::breeding(){
-    set_num(get_num()+2*int(get_num()/4));
+    set_num(get_num()+3*int(get_num()/4));
 }
 
 

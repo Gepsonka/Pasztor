@@ -33,7 +33,7 @@ public:
     virtual ~Prey(){}
     virtual void getting_eaten(int predator_colony_num)=0;
     virtual void check_num()=0;
-    virtual void raise_num()=0;
+    virtual void raise_num(int round)=0;
 };
 
 class Predators : public Animal{
@@ -52,7 +52,7 @@ class Lemming : public Prey {
 public:
     using Prey::Prey;
     void getting_eaten(int predator_colony_num) override;
-    void raise_num() override;
+    void raise_num(int round) override;
     void check_num() override;
 
 };
@@ -63,7 +63,7 @@ public:
     using Prey::Prey;
     void getting_eaten(int predator_colony_num) override;
     void check_num() override;
-    void raise_num() override;
+    void raise_num(int round) override;
 
 };
 
@@ -72,7 +72,7 @@ public:
     using Prey::Prey;
     void getting_eaten(int predator_colony_num) override;
     void check_num() override;
-    void raise_num() override;
+    void raise_num(int round) override;
 
 };
 
